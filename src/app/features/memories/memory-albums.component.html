@@ -1,0 +1,37 @@
+<section class="memories-section">
+  <div class="memories-content">
+    <h1 class="deck-title font-display">{{ pageTitle }} <span aria-hidden="true">♡</span></h1>
+    <p class="deck-subtitle">{{ pageSubtitle }}</p>
+    <div class="deck-area">
+      <div class="card-stack" [class.dragging]="isDragging" [class.resetting]="isResetting" [class.swipe-next]="swipeDirection === 'next'" [class.swipe-previous]="swipeDirection === 'previous'" [style.--drag-x.px]="dragOffset">
+        <span class="stack-card stack-card-back stack-card-back-two" aria-hidden="true">
+          <span class="photo-wrap"><img [src]="secondNextMemory.image" alt="" /></span>
+          <span class="polaroid-title font-display">{{ secondNextMemory.title }} ♡</span>
+        </span>
+        <span class="stack-card stack-card-back stack-card-back-one" aria-hidden="true">
+          <span class="photo-wrap"><img [src]="nextMemory.image" alt="" /></span>
+          <span class="polaroid-title font-display">{{ nextMemory.title }} ♡</span>
+        </span>
+        <span class="stack-card stack-card-previous" [class.previous-enter]="swipeDirection === 'previous'" aria-hidden="true">
+          <span class="photo-wrap"><img [src]="previousMemory.image" alt="" /></span>
+          <span class="polaroid-title font-display">{{ previousMemory.title }} ♡</span>
+        </span>
+        <button class="memory-card" type="button" [class.is-flipped]="isFlipped" [attr.aria-pressed]="isFlipped" [attr.aria-label]="isFlipped ? activeMemory.caption + '. Show photo' : activeMemory.alt + '. Show note'" (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)" (pointerup)="onPointerUp()" (pointercancel)="onPointerCancel()" (click)="flipCard()">
+          <span class="polaroid-inner">
+            <span class="polaroid-face polaroid-front" [attr.aria-hidden]="isFlipped">
+              <span class="photo-wrap"><img [src]="activeMemory.image" [alt]="activeMemory.alt" draggable="false" /></span>
+              <span class="polaroid-title font-display">{{ activeMemory.title }} <span>♡</span></span>
+            </span>
+            <span class="polaroid-face polaroid-back" [attr.aria-hidden]="!isFlipped">
+              <span class="note-heart" aria-hidden="true">♡</span>
+              <span class="note-heading font-display">{{ activeMemory.title }}</span>
+              <span class="note-message">{{ activeMemory.caption }}</span>
+              <span class="note-footer">with all my love ♡</span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>

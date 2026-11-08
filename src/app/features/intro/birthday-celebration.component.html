@@ -1,0 +1,13 @@
+<div class="celebration" aria-hidden="true">
+  @for (piece of confetti; track $index) {
+    <span class="confetti" [style.left.%]="piece.left" [style.animation-delay.ms]="piece.delay" [style.animation-duration.ms]="piece.duration" [style.background-color]="piece.color"></span>
+  }
+  <div class="party-popper popper-left"><img src="birthday-party-popper.png" alt="" decoding="async"></div>
+  <div class="party-popper popper-right"><img src="birthday-party-popper.png" alt="" decoding="async"></div>
+</div>
+@if (autoplayBlocked && !audioUnavailable) {
+  <button class="continue-button" type="button" (click)="playSong()">Play birthday song</button>
+}
+@if (audioUnavailable) {
+  <button class="continue-button" type="button" (click)="continueToMemories()">Continue to our memories</button>
+}

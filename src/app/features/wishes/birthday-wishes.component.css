@@ -1,0 +1,29 @@
+:host { display: block; height: 100%; min-height: 0; }
+.wishes-page { position: relative; isolation: isolate; display: flex; width: 100%; height: 100%; min-height: 0; align-items: center; justify-content: center; overflow: hidden; padding: .5rem; background: linear-gradient(145deg, #fff8f8, #fff0f5 55%, #fff6f0); text-align: center; }
+.wish-card { position: relative; display: flex; width: min(100%, 48rem); max-height: 100%; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(255,255,255,.9); border-radius: 1.5rem; padding: clamp(.7rem, 2.2vh, 1.4rem) clamp(.8rem, 4vw, 2.5rem); background: rgba(255,255,255,.78); box-shadow: 0 18px 55px rgba(154,75,99,.12); backdrop-filter: blur(6px); animation: fade-rise .85s ease both; }
+.bouquet { display: flex; width: clamp(2rem, 7vh, 3.5rem); height: clamp(2rem, 7vh, 3.5rem); flex: 0 0 auto; align-items: center; justify-content: center; border-radius: 1rem; background: #fff1f5; font-size: clamp(1.2rem, 4vh, 2rem); }
+.eyebrow { margin: .3rem 0 .15rem; color: #c14d74; font-size: .56rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.wish-card h1 { margin: 0; color: #65283e; font-size: clamp(1.45rem, 6vw, 3.6rem); font-weight: 600; line-height: 1.05; }
+.wish-card h1 span { color: #c14d74; }
+.divider { width: 3rem; height: 1px; flex: 0 0 auto; margin: .45rem 0; background: #efcad5; }
+.wish-copy { max-width: 38rem; margin: 0; color: rgba(93,41,61,.76); font-size: clamp(.68rem, 1.85vh, .9rem); line-height: 1.4; }
+.wish-copy-second { margin-top: .35rem; }
+.birthday-signoff { margin: .35rem 0 0; color: #9f4563; font-size: clamp(.9rem, 2.8vh, 1.3rem); font-style: italic; }
+.birthday-signoff span { color: #df91a8; }
+.page-actions { display: flex; flex: 0 0 auto; justify-content: center; gap: .5rem; margin-top: .5rem; }
+.page-button { display: inline-flex; align-items: center; justify-content: center; min-height: 2rem; border-radius: 999px; background: #be456e; padding: .45rem .85rem; color: white; font-size: .68rem; font-weight: 700; text-decoration: none; box-shadow: 0 7px 16px rgba(190,70,112,.16); }
+.page-button-light { border: 1px solid #f3cbd7; background: white; color: #9f3158; box-shadow: none; }
+.wish-orb { position: absolute; z-index: -1; width: 16rem; height: 16rem; border-radius: 50%; filter: blur(2px); opacity: .55; }
+.wish-orb-left { left: -11rem; top: 4%; background: radial-gradient(circle, #fbcfe0, transparent 68%); }
+.wish-orb-right { right: -11rem; bottom: 0; background: radial-gradient(circle, #f9dacb, transparent 68%); }
+@media (min-width: 640px) {
+  .wishes-page { padding: 1rem; }
+  .wish-card { border-radius: 2rem; padding: clamp(1rem, 3vh, 2.3rem) 3rem; }
+  .eyebrow { margin: .45rem 0 .3rem; font-size: .68rem; }
+  .wish-copy { font-size: clamp(.82rem, 1.8vh, 1.02rem); line-height: 1.55; }
+  .wish-copy-second { margin-top: .55rem; }
+  .birthday-signoff { margin-top: .55rem; }
+  .page-actions { margin-top: .8rem; }
+  .page-button { min-height: 2.3rem; padding: .55rem 1.1rem; font-size: .78rem; }
+}
+@media (max-height: 540px) { .eyebrow, .wish-copy-second { display: none; } .wish-card { padding-block: .4rem; } .divider { margin: .2rem 0; } }
