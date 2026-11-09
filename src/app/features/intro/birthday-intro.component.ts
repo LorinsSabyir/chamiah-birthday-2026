@@ -169,8 +169,8 @@ export class BirthdayIntroComponent implements OnDestroy {
     this.celebrating = true;
   }
 
-  protected openMemories(): void {
-    void this.router.navigateByUrl('/memories');
+  protected openThingsILove(): void {
+    void this.router.navigateByUrl('/things-i-love');
   }
   private stopListening(): void {
     this.listening = false;

@@ -9,4 +9,4 @@ entry in `MEMORIES` to match its filename. For example:
 image: 'images/memories/our-first-date.jpg'
 ```
 
-You can also edit the card's `alt`, `title`, and `caption` in the same entry.
+You can also edit the card's `alt`, `title`, `caption`, and `footer` in the same entry.

@@ -55,7 +55,7 @@ export class BirthdayCelebrationComponent implements AfterViewInit, OnDestroy {
     });
   }
 
-  protected continueToMemories(): void {
+  protected continueToNextPage(): void {
     this.finishCelebration();
   }
 

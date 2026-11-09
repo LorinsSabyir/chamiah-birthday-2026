@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectorRef, Component, inject, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MEMORIES, THINGS_I_LOVE } from './memory-decks';
+import { MEMORIES, type Memory } from './memory-decks';
 
 @Component({
   selector: 'app-memory-albums',
@@ -10,7 +10,7 @@ export class MemoryAlbumsComponent implements AfterViewInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);
   protected readonly pageTitle: string = this.route.snapshot.data['deckTitle'] ?? 'Our memories';
   protected readonly pageSubtitle: string = this.route.snapshot.data['deckSubtitle'] ?? '';
-  protected readonly memories = this.route.snapshot.data['deck'] === 'love' ? THINGS_I_LOVE : MEMORIES;
+  protected readonly memories: Memory[] = (this.route.snapshot.data['cards'] as Memory[] | undefined) ?? MEMORIES;
 
   protected activeIndex = 0;
   protected isFlipped = false;

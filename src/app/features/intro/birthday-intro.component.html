@@ -1,5 +1,5 @@
 <section class="hero relative isolate flex h-full items-center justify-center overflow-hidden px-4 py-2 text-center sm:px-6 sm:py-5">
-  @if (celebrating) { <app-birthday-celebration (finished)="openMemories()" /> }
+  @if (celebrating) { <app-birthday-celebration (finished)="openThingsILove()" /> }
   <div class="hero-glow absolute inset-0 -z-10"></div>
   <span class="orb orb-one absolute rounded-full"></span>
   <span class="orb orb-two absolute rounded-full"></span>
@@ -14,10 +14,11 @@
   </div>
 
   <div class="welcome-content fade-rise relative mx-auto flex h-full w-full max-w-4xl flex-col items-center justify-center px-1 pt-8 sm:pt-0">
-    <p class="welcome-eyebrow">a little something, just for you</p>
-    <p class="font-display welcome-greeting">Happy birthday,</p>
-    <h1 class="font-display birthday-name">my favorite girl<span>.</span></h1>
-    <p class="welcome-copy">Today is all about celebrating the wonderful person who makes my world softer, brighter, and so much more fun.</p>
+    <p class="welcome-eyebrow">Happy 20th Birthday</p>
+    <p class="font-display welcome-greeting">To my favorite girl,</p>
+    <h1 class="font-display birthday-name">Chamiah S. Degorio<span>.</span></h1>
+    <p class="welcome-copy">Today is all about celebrating the wonderful person who brings colors to my world, making it softer, brighter, and so much more fun.</p>
+    <p class="welcome-copy">I hope you enjoy my little gift just for you!</p>
 
     <div class="cake-stage" [class.cake-done]="!candleTwoLit && !candleZeroLit" (pointerdown)="startBlowGesture($event)" (pointermove)="moveBlowGesture($event)" (pointerup)="endBlowGesture()" (pointercancel)="endBlowGesture()" aria-label="Pink birthday cake. Blow into the microphone or swipe upward to extinguish the candle.">
       <div class="cake-glow"></div>
