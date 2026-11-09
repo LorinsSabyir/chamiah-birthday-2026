@@ -1,18 +1,24 @@
-import { Component, HostListener, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnDestroy, signal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { inject } from '@angular/core';
+import { BIRTHDAY_UNLOCK_AT, BirthdayCountdownComponent } from './features/countdown/birthday-countdown.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterLink, RouterLinkActive, RouterOutlet],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet, BirthdayCountdownComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App implements OnDestroy {
+  protected readonly unlocked = signal(Date.now() >= BIRTHDAY_UNLOCK_AT);
   protected readonly router = inject(Router);
   protected navHidden = false;
   private lastScrollY = 0;
   private revealTimer?: number;
+
+  protected openBirthdaySurprise(): void {
+    this.unlocked.set(true);
+  }
 
   @HostListener('window:scroll')
   protected onWindowScroll(): void {

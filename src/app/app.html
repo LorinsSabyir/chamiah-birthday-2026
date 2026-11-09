@@ -1,3 +1,4 @@
+@if (unlocked()) {
 <div class="app-shell" [class.landing-shell]="router.url.split('?')[0] === '/'">
   @if (router.url.split('?')[0] !== '/') {
   <header class="site-header" [class.nav-hidden]="navHidden">
@@ -18,3 +19,6 @@
     <footer class="site-footer">made with <span aria-label="love">♥</span> for your favorite person</footer>
   }
 </div>
+} @else {
+  <app-birthday-countdown (unlocked)="openBirthdaySurprise()" />
+}
